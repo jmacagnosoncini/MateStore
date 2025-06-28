@@ -1,120 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./card.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./card.css" />
+    <link rel="stylesheet" href="./navbar.css" />
+    <link rel="stylesheet" href="./mediaqueries.css" />
     <title>Mate Store</title>
     <!-- favicon -->
-     <link rel="shortcut icon" href="./img/favicon-32x32.png" type="image/x-icon">
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="./img/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
     <header class="header">
-        <div class="container-logo">
-        <img src="./img/logo--related-to-argentinian-mate--with-a-clay-sty.png" alt="logo" class="logo">
+      <div class="container-logo">
+        <img
+          src="./img/logo--related-to-argentinian-mate--with-a-clay-sty.png"
+          alt="logo"
+          class="logo"
+        />
         <p>MateStore</p>
+      </div>
+
+      <nav class="navbar">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-burger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <ul class="navbar-list">
+          <li><a class="navbar-link" href="#hero">Inicio</a></li>
+          <li><a class="navbar-link" href="#products">Productos</a></li>
+          <li><a class="navbar-link" href="#contact">Contactanos</a></li>
+        </ul>
+      </nav>
+
+      <div class="cart-label">
+        <i class="fa-solid fa-cart-shopping cart-icon">
+          <div class="cart-bubble">0</div>
+        </i>
+      </div>
+      <div class="cart">
+        <h2>Tus productos:</h2>
+        <div class="cart-container"></div>
+        <span class="divider"></span>
+        <div class="cart-total">
+          <p>Total:</p>
+          <span class="total">USD</span>
         </div>
-
-        
-        <nav class="navbar">
-
-            <ul class="navbar-list">
-                <li><a class="navbar-link" href="#hero">Inicio</a></li>
-                <li><a class="navbar-link" href="#products">Productos</a></li>
-                <li><a class="navbar-link" href="#contact">Contactanos</a></li>
-            </ul>
-            
-
-            <div class="cart-label">
-                <i class="fa-solid fa-cart-shopping cart-icon">
-                    <div class="cart-bubble">0</div>
-                </i>
-            </div>
-
-            <div class="cart">
-
-                <h2>Tus productos:</h2>
-
-                <div class="cart-container">
-
-                </div>
-
-                <span class="divider"></span>
-
-                <div class="cart-total">
-                    <p>Total:</p>
-                    <span class="total">USD</span>
-                </div>
-                <button class="btn-buy">Comprar</button>
-                <button class="btn-delete">Vaciar carrito</button>
-
-
-            </div>
-        </nav>
+        <button class="btn-buy">Comprar</button>
+        <button class="btn-delete">Vaciar carrito</button>
+      </div>
     </header>
 
     <!-- main -->
-
     <main>
-        <!-- hero -->
-         <section class="hero">
-            <div class="hero-info">
-            <h1>
-                Comprá productos Argentinos desde cualquier parte del <div class="container-mundo"><span class="celeste">M</span><span class="blanco">U</span><span class="amarillo">N</span><span class="blanco">D</span><span class="celeste">O</span></div> 🌎
-            </h1>
-            <p>
-                No importa dónde estés, en <span>Mate Store</span>  nos encargamos de que lo recibas 🇦🇷.
-            </p>
+      <!-- hero -->
+      <section class="hero" id="hero">
+        <div class="hero-info">
+          <h1>
+            Comprá productos Argentinos desde cualquier parte del
+            <div class="container-mundo">
+              <span class="celeste">M</span><span class="blanco">U</span
+              ><span class="amarillo">N</span><span class="blanco">D</span
+              ><span class="celeste">O</span>
             </div>
-
-            <div class="container-hero-info">
-                <div class="img-mundo">
-                    <p class="icono-mate">🧉</p>
-                    <img src="./img/tiktokemoji.com_6.png" alt="empanada" class="empanada">
-                    <img src="./img/4A3gLuEs.webp" alt="tango dancer" class="tango">
-                </div>
-            </div>
-         </section>
-
-         <section id="productos">
-            <div class="container-titulo-productos">
-                <h2>Nuestros productos:</h2>
-            </div>
-            <div class="categories">
-                <button class="category all active">Todos</button>
-                <button class="category" data-category="yerba">Yerba 🧉</button>
-                <button class="category" data-category="alfajores">Alfajores 🍩</button>
-                <button class="category" data-category="candy">Golosinas 🍭</button>
-                <button class="category" data-category="bebidas">Bebidas 🍾</button>
-                <button class="category" data-category="galletas">Galletas 🍪</button>
-            </div>
-            <div class="card-products-holder">
-            <div class="container-productos">
-            </div>
-
-            </div>
-            <div class="pagination-holder-container">
-            <div class="pagination-container">
-            </div>
-
-            </div>
-            </div>
-         </section>
-    </main>
-    <footer id="contactanos">
-        <div class="inf-logo-email">
-            <div class="logo-footer"></div>
-            <h4>Productos argentinos a todo el mundo</h4>
-            <div class="email-icon"><i class="fa-regular fa-envelope"></i><p>matestore@gmal.com</p></div>
+            🌎
+          </h1>
+          <p>
+            No importa dónde estés, en <span>Mate Store</span> nos encargamos de
+            que lo recibas 🇦🇷.
+          </p>
         </div>
-        <div class="garantia-formas-pago"></div>
-        <div class="recibi-nuestras-ofertas"></div>
+
+        <div class="container-hero-info">
+          <div class="img-mundo">
+            <p class="icono-mate">🧉</p>
+            <img
+              src="./img/tiktokemoji.com_6.png"
+              alt="empanada"
+              class="empanada"
+            />
+            <img src="./img/4A3gLuEs.webp" alt="tango dancer" class="tango" />
+          </div>
+        </div>
+      </section>
+
+      <section id="products">
+        <div class="container-titulo-productos">
+          <h2>Nuestros productos:</h2>
+        </div>
+        <div class="categories">
+          <button class="category all active">Todos</button>
+          <button class="category" data-category="yerba">Yerba 🧉</button>
+          <button class="category" data-category="alfajores">
+            Alfajores 🍩
+          </button>
+          <button class="category" data-category="candy">Golosinas 🍭</button>
+          <button class="category" data-category="bebidas">Bebidas 🍾</button>
+          <button class="category" data-category="galletas">Galletas 🍪</button>
+        </div>
+        <div class="card-products-holder">
+          <div class="container-productos"></div>
+        </div>
+        <div class="pagination-holder-container">
+          <div class="pagination-container"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="inf-logo-email">
+        <div class="logo-footer"></div>
+        <h4>Productos argentinos a todo el mundo</h4>
+        <div class="email-icon">
+          <i class="fa-regular fa-envelope"></i>
+          <p>matestore@gmal.com</p>
+        </div>
+      </div>
+
+      <div class="cond-envios">
+        <h3>Garantía de entrega</h3>
+        <p>Envíos con DHL, UPS y FedEx 100% asegurado</p>
+        <h3>Asistencia con su pedido</h3>
+        <p>
+          Contactanos por matestoreenvios@gmal.com por consultas sobre tu pedido
+        </p>
+        <h3>Pago seguro y confiable</h3>
+        <p>Con Visa, Mastercard, AmEx y PayPal</p>
+      </div>
     </footer>
+
     <div class="add-modal"></div>
 
     <script src="./data.js"></script>
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
