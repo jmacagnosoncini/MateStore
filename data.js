@@ -105,24 +105,3 @@ const productos = [
         cardImg: "./img-productos/amargo-obrero.jpg",
     },
 ];
-
-const divideProductsInParts = (size) => {
-    let productsList = [];
-    for (let i = 0; i < productos.length; i += size) {
-      productsList.push(productos.slice(i, i + size));
-    }
-
-    return productsList
-}
-
-// explicacion: size es igual a 6. en el bucle comienza desde seguro, luego, continua siempre que i sea menor a la cantidad de productos.lenght, y despues a la i se le suma el valor de size, es decir, 6
-//esto tiene como resultado que a la lista se productos se le push (empujen) productos en forma de slices
-
-const appState = {
-    products: divideProductsInParts(6),
-    productsLimit: divideProductsInParts(6).length,
-    currentProductsIndex: 0,
-    activeFilter: null
-}
-
-

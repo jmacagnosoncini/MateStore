@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./card.css" />
     <link rel="stylesheet" href="./navbar.css" />
@@ -23,48 +16,44 @@
     />
   </head>
   <body>
+    <a class="skip-link" href="#products">Saltar a productos</a>
     <header class="header">
-      <div class="container-logo">
+      <a class="container-logo" href="#hero" aria-label="MateStore, inicio">
         <img
           src="./img/logo--related-to-argentinian-mate--with-a-clay-sty.png"
-          alt="logo"
+          alt=""
           class="logo"
         />
         <p>MateStore</p>
-      </div>
+      </a>
 
-      <nav class="navbar">
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label for="menu-toggle" class="menu-burger" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
+      <nav class="navbar" aria-label="Navegación principal">
+        <button type="button" class="menu-burger" aria-label="Abrir menú" aria-controls="navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
-        <ul class="navbar-list">
+        <ul class="navbar-list" id="navigation">
           <li><a class="navbar-link" href="#hero">Inicio</a></li>
           <li><a class="navbar-link" href="#products">Productos</a></li>
           <li><a class="navbar-link" href="#contact">Contactanos</a></li>
         </ul>
       </nav>
 
-      <div class="cart-label">
-        <i class="fa-solid fa-cart-shopping cart-icon">
-          <div class="cart-bubble">0</div>
-        </i>
-      </div>
-      <div class="cart">
-        <h2>Tus productos:</h2>
-        <div class="cart-container"></div>
-        <span class="divider"></span>
-        <div class="cart-total">
-          <p>Total:</p>
-          <span class="total">USD</span>
-        </div>
-        <button class="btn-buy">Comprar</button>
-        <button class="btn-delete">Vaciar carrito</button>
-      </div>
+      <button type="button" class="cart-label" aria-label="Abrir carrito, 0 productos" aria-haspopup="dialog" aria-controls="cart" aria-expanded="false">
+        <span aria-hidden="true">🛒</span><span class="cart-bubble" aria-hidden="true">0</span>
+      </button>
     </header>
+    <div class="cart-backdrop" hidden></div>
+    <section class="cart" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+      <div class="cart-heading"><h2 id="cart-title">Tus productos</h2><button type="button" class="cart-close" aria-label="Cerrar carrito">×</button></div>
+      <div class="cart-container"></div>
+      <div class="cart-summary">
+        <div class="cart-total"><p>Total</p><strong class="total">USD 0.00</strong></div>
+        <button type="button" class="btn-buy">Comprar</button>
+        <button type="button" class="btn-delete">Vaciar carrito</button>
+      </div>
+    </section>
+
 
     <!-- main -->
     <main>
@@ -73,28 +62,29 @@
         <div class="hero-info">
           <h1>
             Comprá productos Argentinos desde cualquier parte del
-            <div class="container-mundo">
+            <span class="container-mundo">
               <span class="celeste">M</span><span class="blanco">U</span
               ><span class="amarillo">N</span><span class="blanco">D</span
               ><span class="celeste">O</span>
-            </div>
+            </span>
             🌎
           </h1>
           <p>
             No importa dónde estés, en <span>Mate Store</span> nos encargamos de
             que lo recibas 🇦🇷.
           </p>
+          <a class="hero-cta" href="#products">Explorá los productos <span aria-hidden="true">↗</span></a>
         </div>
 
-        <div class="container-hero-info">
+        <div class="container-hero-info" aria-hidden="true">
           <div class="img-mundo">
             <p class="icono-mate">🧉</p>
             <img
               src="./img/tiktokemoji.com_6.png"
-              alt="empanada"
+              alt=""
               class="empanada"
             />
-            <img src="./img/4A3gLuEs.webp" alt="tango dancer" class="tango" />
+            <img src="./img/4A3gLuEs.webp" alt="" class="tango" />
           </div>
         </div>
       </section>
@@ -128,7 +118,7 @@
         <h4>Productos argentinos a todo el mundo</h4>
         <div class="email-icon">
           <i class="fa-regular fa-envelope"></i>
-          <p>matestore@gmal.com</p>
+          <a href="mailto:matestore@gmal.com">matestore@gmal.com</a>
         </div>
       </div>
 
@@ -144,7 +134,7 @@
       </div>
     </footer>
 
-    <div class="add-modal"></div>
+    <div class="add-modal" role="status" aria-live="polite" aria-atomic="true"></div>
 
     <script src="./data.js"></script>
     <script src="./main.js"></script>
